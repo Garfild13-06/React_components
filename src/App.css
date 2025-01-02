@@ -1,0 +1,250 @@
+/* Основные стили */
+body, html {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+    height: 100%;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Стили контейнера */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #999;
+}
+
+.window {
+    background: #fff;
+    width: 470px;
+    min-height: 400px;
+    position: relative;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили товаров */
+.shop-item {
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.shop-item h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.shop-item h2 {
+    font-size: 1.5rem;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.shop-item h3 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.shop-item .description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.shop-item .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Стили для компонентов окна */
+.highlight-window {
+    height: 550px;
+    width: 400px;
+    background: url('../img/item-blue.jpg') center top / cover;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .4s ease;
+    background: url('../img/item-black.jpg') center top / cover;
+}
+
+.background-element {
+    background: #457;
+    position: absolute;
+    width: 120%;
+    height: 400px;
+    left: -50px;
+    top: -80px;
+    transform: rotate(-5deg);
+    transition: background .6s ease;
+}
+
+/* Стили для кнопок и ссылок */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #666;
+}
+
+button {
+    background: #333;
+    border: none;
+    font-weight: 400;
+    height: 40px;
+    padding: 0 25px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Дополнительные стили */
+.divider {
+    width: 80%;
+    height: 1px;
+    background: #ddd;
+    margin: 20px auto;
+}
+
+/* Мобильные стили */
+@media (max-width: 850px) {
+    body {
+        background: #fff;
+        overflow: auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3, h2 {
+        font-size: 1rem;
+    }
+
+    .container {
+        background: #fff;
+        overflow: auto;
+    }
+
+    .background-element {
+        display: none;
+    }
+
+    .main-content {
+        overflow: auto;
+        padding-right: 25px;
+    }
+
+    .highlight-window {
+        position: fixed;
+        left: 0;
+        height: 100%;
+        width: 50%;
+    }
+
+    .window {
+        overflow: auto;
+        width: 50%;
+        height: auto;
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .highlight-window {
+        display: none;
+    }
+
+    body {
+        overflow: auto;
+        height: auto;
+    }
+
+    .highlight-window.mobile {
+        position: relative;
+        display: block;
+        height: 500px;
+        box-shadow: none;
+        border: 1px solid #ccc;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .container {
+        overflow: auto;
+    }
+
+    .window {
+        width: 100%;
+        position: relative;
+        height: 100%;
+        overflow: auto;
+    }
+}
